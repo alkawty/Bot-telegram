@@ -85,7 +85,7 @@ def send_welcome_command(message):
     bot.reply_to(message, "مرحبا بك في بوت مكتبه شغف.\nهذا البوت إدارة الموقع وليس للمستخدمين", reply_markup=markup)
 
 
-@bot.message_handler(func=lambda message: message.text.lower() == "users")
+@bot.message_handler(commands=['users'])
 def show_all_users(message):
     if str(message.from_user.id) != str(ADMIN_ID):
         bot.reply_to(message, "عذراً، هذا الأمر مخصص للإدارة فقط 🚫")
